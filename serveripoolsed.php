@@ -11,11 +11,18 @@
     $Vanus = 21;
     $eesnimi_algab_vokaaliga = true;            //Boolean
     echo $Nimi . " " . $Perenimi . " " . "(" . $Vanus . ")";
-    $isik = array("Evgeniy", "Kureyko", "21");                          //Array
-    echo $isik[0] . " " . $isik[1] . " " . "(" . $isik[2] . ")";
+
+
+    $isik = new stdClass();                    //Objekt
+    $isik->nimi = "Evgeniy";
+    $isik->perenimi = "Kueyko";
+    $isik->vanus = 21;
+    $isik->sugu = "mees";
+    echo $isik->nimi . " " . $isik->perenimi . " " . $isik->vanus . " " . $isik-> sugu;
     if ($eesnimi_algab_vokaaliga = true) {         //If
         echo "Nimi algab vokaaliga";
     }
 ?>
 </body>
 </html>
+
