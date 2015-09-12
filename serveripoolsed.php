@@ -5,6 +5,7 @@
     <title>Pseudoprojekt</title>
 </head>
 <body>
+
 <?php
     $Nimi = 'Evgeniy';
     $Perenimi = 'Kureyko';
@@ -28,6 +29,11 @@
     $arv1 = 1.23;           //Float summa
     $arv2 = 2.34;
     echo $arv1 + $arv2;
+
+
+    if(isset($_GET["koer"]) && $_GET["koer"] == "terjer") {
+        echo "Terjer";
+    }
 ?>
 </body>
 </html>
