@@ -9,19 +9,21 @@
     $Nimi = 'Evgeniy';
     $Perenimi = 'Kureyko';
     $Vanus = 21;
-    $eesnimi_algab_vokaaliga = true;            //Boolean
-    echo $Nimi . " " . $Perenimi . " " . "(" . $Vanus . ")";
+    echo $Nimi . " " . $Perenimi . " " . "(" . $Vanus . ")" . "<br>" . PHP_EOL;
 
+    $eesnimi_algab_vokaaliga = true;            //Boolean
+    $eletter = substr($Nimi, 0, 1);
+    $vowels = array("A", "E", "I", "O", "U", "Õ", "Ä", "Ö", "Ü");
+    if (in_array($eletter,$vowels)) {
+        echo "Eesnimi algab vokaaliga <br>" . PHP_EOL;
+    }
 
     $isik = new stdClass();                    //Objekt
     $isik->nimi = "Evgeniy";
     $isik->perenimi = "Kueyko";
     $isik->vanus = 21;
     $isik->sugu = "mees";
-    echo $isik->nimi . " " . $isik->perenimi . " " . $isik->vanus . " " . $isik-> sugu;
-    if ($eesnimi_algab_vokaaliga = true) {         //If
-        echo "Nimi algab vokaaliga";
-    }
+    echo $isik->nimi . " " . $isik->perenimi . " " . $isik->vanus . " " . $isik-> sugu . "<br>" . PHP_EOL;
 ?>
 </body>
 </html>
