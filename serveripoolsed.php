@@ -1,5 +1,6 @@
 <?php
     $Nimi = 'Evgeniy';
     $Perenimi = 'Kureyko';
-    echo $Nimi . " " . $Perenimi;
+    $Vanus = 21;
+    echo $Nimi . " " . $Perenimi . "(" . $Vanus . ")";
 ?>
