@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kliendipoolsed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
 
@@ -25,10 +26,11 @@
 <img id="KassKoeraks" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Standing_jaguar.jpg" alt="" onclick="kasskoeraks()">
 
 <script>
-    function kasskoeraks() {
-        document.getElementById('KassKoeraks').src="http://www.citypresokc.com/wp-content/uploads/2015/03/pug.jpg";
-        src.replace()
-    }
+    $('#KassKoeraks').on({
+        'click': function(){
+            $('#KassKoeraks').attr('src', 'http://www.citypresokc.com/wp-content/uploads/2015/03/pug.jpg');
+        }
+    });
 </script>
 
 </body>
