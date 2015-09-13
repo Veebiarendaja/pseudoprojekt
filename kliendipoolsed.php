@@ -33,5 +33,17 @@
     });
 </script>
 
+<br>
+
+<button id="button" value="red">Red</button>
+<button id="button" value="green">Green</button>
+<button id="button" value="blue">Blue</button>
+
+<script>
+    $("button").click(function(){
+        $("body").css("background", $(this).val());
+    });
+</script>
+
 </body>
 </html>
