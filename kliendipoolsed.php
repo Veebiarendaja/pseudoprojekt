@@ -12,6 +12,11 @@
         alert("Tere Maailm!");
     }
 </script>
-
+<a  href="http://www.khk.ee" onclick='alert("Tere Maailm!")'>Tere Maailm!</a>
+<script>
+    function linkFunction() {
+        alert("Tere Maailm!");
+    }
+</script>
 </body>
 </html>
