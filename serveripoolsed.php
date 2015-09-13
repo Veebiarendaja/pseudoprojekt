@@ -21,7 +21,7 @@
 
     $isik = new stdClass();                    //Objekt
     $isik->nimi = "Evgeniy";
-    $isik->perenimi = "Kueyko";
+    $isik->perenimi = "Kureyko";
     $isik->vanus = 21;
     $isik->sugu = "mees";
     echo $isik->nimi . " " . $isik->perenimi . " " . $isik->vanus . " " . $isik-> sugu . "<br>" . PHP_EOL;
@@ -34,7 +34,18 @@
     if(isset($_GET["koer"]) && $_GET["koer"] == "terjer") {
         echo "Terjer";
     }
+
+    if(isset($_POST["kass"])) {
+        echo "kass oli: " . $_POST["kass"] . PHP_EOL;
+    }
+
 ?>
+
+<form action="?" method=post>
+    <input name="kass" placeholder="kassitõug"><br>
+    <input type="submit">
+</form>
+
+
 </body>
 </html>
-
