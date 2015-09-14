@@ -53,8 +53,15 @@
     });
 </script>
 
+<!--<button id="click">Allow Click</button>
 
-
+<script>
+    $('#click').click(function(){
+        $("body").bind("contextmenu",function(){
+            event.preventDefault();
+        }
+    })
+</script>-->
 
 </body>
 </html>
