@@ -35,13 +35,21 @@
 
 <br>
 
-<button id="button">Red</button>
+<button id="button">Red</button>            <!--Color Button-->
 <button id="button">Green</button>
 <button id="button">Blue</button>
 
 <script>
-    $("button").click(function(){
+    $("button").click(function(){                           /*Color button script*/
         $("body").css("background", $(this).text());
+    });
+</script>
+
+<script>                                           /* Click block*/
+    $(document).ready(function() {
+        $("body").on("contextmenu",function(){
+            return false;
+        });
     });
 </script>
 
