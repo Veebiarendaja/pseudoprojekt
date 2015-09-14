@@ -63,5 +63,15 @@
     })
 </script>-->
 
+<button id="toggle">Toggle</button>             <!--Toggle-->
+
+<script>
+    $(document).ready(function(){
+        $('#toggle').click(function(){
+            $('#KassKoeraks').toggle();
+        });
+    });
+</script>
+
 </body>
 </html>
