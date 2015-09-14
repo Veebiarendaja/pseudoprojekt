@@ -35,9 +35,9 @@
 
 <br>
 
-<button id="button" name="red">Red</button>
-<button id="button" value="green">Green</button>
-<button id="button" value="blue">Blue</button>
+<button id="button">Red</button>
+<button id="button">Green</button>
+<button id="button">Blue</button>
 
 <script>
     $("button").click(function(){
