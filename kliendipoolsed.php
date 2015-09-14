@@ -47,11 +47,13 @@
 
 <script>                                           /*Click block*/
     $(document).ready(function() {
-        $("body").on("contextmenu",function(){
+        $("body").bind("contextmenu",function(){
             return false;
         });
     });
 </script>
+
+
 
 </body>
 </html>
