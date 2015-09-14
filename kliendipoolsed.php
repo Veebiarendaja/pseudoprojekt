@@ -7,14 +7,15 @@
 </head>
 <body>
 
-<button onclick="myFunction()">Tere Maailm!</button> <!--Button Alert-->
+<button onclick="myFunction()">Tere Maailm!</button>
+<!--Button Alert-->
 <br>
 <script>
     function myFunction() {
         alert("Tere Maailm!");
     }
 </script>
-<a  href="http://www.khk.ee" onclick='alert("Tere Maailm!")'>Tere Maailm!</a> <br> <!--Alert link-->
+<a href="http://www.khk.ee" onclick='alert("Tere Maailm!")'>Tere Maailm!</a> <br> <!--Alert link-->
 <script>
     function linkFunction() {
         alert("Tere Maailm!");
@@ -23,11 +24,11 @@
 
 <a href="" onclick='alert("j‰‰me siia"); event.preventDefault()'>j‰‰me siia</a> <br> <!--Navigeerimatu link-->
 
-<img id="KassKoeraks" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Standing_jaguar.jpg" alt="" onclick="kasskoeraks()">
+<img id="KassKoeraks" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Standing_jaguar.jpg" alt="">
 
-<script>
+<script>                    /*JQuery Script*/
     $('#KassKoeraks').on({
-        'click': function(){
+        'click': function () {
             $('#KassKoeraks').attr('src', 'http://www.citypresokc.com/wp-content/uploads/2015/03/pug.jpg');
         }
     });
@@ -35,39 +36,40 @@
 
 <br>
 
-<button id="button">Red</button>            <!--Color Button-->
+<button id="button">Red</button>
+<!--Color Button-->
 <button id="button">Green</button>
 <button id="button">Blue</button>
 
 <script>
-    $("button").click(function(){                           /*Color button script*/
+    $("button").click(function () {                           /*Color button script*/
         $("body").css("background", $(this).text());
     });
 </script>
 
+
 <script>                                           /*Click block*/
-    $(document).ready(function() {
-        $("body").bind("contextmenu",function(){
+    $(document).ready(function () {
+        window.oncontextmenu = function () {
             return false;
-        });
+        }
     });
 </script>
 
-<!--<button id="click">Allow Click</button>
+<button id="click">Allow Click</button>
 
 <script>
-    $('#click').click(function(){
-        $("body").bind("contextmenu",function(){
-            event.preventDefault();
-        }
-    })
-</script>-->
+    $('#click').click(function () {
+        window.oncontextmenu = null;
+    });
+</script>
 
-<button id="toggle">Toggle</button>             <!--Toggle-->
+<button id="toggle">Toggle</button>
+<!--Toggle-->
 
 <script>
-    $(document).ready(function(){
-        $('#toggle').click(function(){
+    $(document).ready(function () {
+        $('#toggle').click(function () {
             $('#KassKoeraks').toggle();
         });
     });
