@@ -45,7 +45,7 @@
     });
 </script>
 
-<script>                                           /* Click block*/
+<script>                                           /*Click block*/
     $(document).ready(function() {
         $("body").on("contextmenu",function(){
             return false;
