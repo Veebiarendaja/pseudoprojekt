@@ -1,9 +1,14 @@
 <?php
-    $posts = array("title"=>"Man must explore, and this is exploration at its greatest",
+    $posts[]= array("title"=>"Man must explore, and this is exploration at its greatest",
         "subtitle"=>"Problems look mighty small from 150 miles up",
         "author"=>"Start Bootstrap",
         "date"=> "September 24, 2014");
+    $posts[]= array("title"=>"Stars and stones",
+        "subtitle"=>"Thats soo funny",
+        "author"=>"Start Bootstrap",
+        "date"=> "September 24, 2014");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,28 +98,30 @@
 
     <!-- Main Content -->
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            <?=$posts["title"]?>
-                        </h2>
-                        <h3 class="post-subtitle">
-                            <?=$posts["subtitle"]?>
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <?=$posts["author"]?><a href="#">Start Bootstrap</a> on <?=$posts["date"]?></p>
+        <?php foreach($posts as $post):?>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">
+                                <?=$post["title"]?>
+                            </h2>
+                            <h3 class="post-subtitle">
+                                <?=$post["subtitle"]?>
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted by <?=$post["author"]?><a href="#">Start Bootstrap</a> on <?=$post["date"]?></p>
+                    </div>
+                    <hr>
+                    <!-- Pager -->
+                    <ul class="pager">
+                        <li class="next">
+                            <a href="#">Older Posts &rarr;</a>
+                        </li>
+                    </ul>
                 </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
             </div>
-        </div>
+        <?php endforeach?>
     </div>
 
     <hr>
