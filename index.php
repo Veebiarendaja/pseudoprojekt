@@ -1,12 +1,30 @@
 <?php
-    $posts[]= array("title"=>"Man must explore, and this is exploration at its greatest",
-        "subtitle"=>"Problems look mighty small from 150 miles up",
-        "author"=>"Start Bootstrap",
-        "date"=> "September 24, 2014");
-    $posts[]= array("title"=>"Stars and stones",
-        "subtitle"=>"Thats soo funny",
-        "author"=>"Start Bootstrap",
-        "date"=> "September 24, 2014");
+    $username = "root";
+    $password = "";
+    $hostname = "localhost";
+    $db_name = "blog";
+
+    $dbconnect = mysqli_connect($hostname, $username, $password, $db_name)       //SQL ühendus ja andmete leidmine
+    or die("Unable to connect to MySQL");
+    echo "Connected to MySQL";
+
+
+
+    $sql_query= "SELECT * FROM POSTS JOIN AUTHORS";
+    $result=$dbconnect->query($sql_query);
+    if(mysqli_num_rows($result)>0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $posts[] = $row;
+        }
+    }
+//    $posts[]= array("title"=>"Man must explore, and this is exploration at its greatest",
+//        "subtitle"=>"Problems look mighty small from 150 miles up",
+//        "author"=>"Start Bootstrap",
+//        "date"=> "September 24, 2014");
+//    $posts[]= array("title"=>"Stars and stones",
+//        "subtitle"=>"Thats soo funny",
+//        "author"=>"Start Bootstrap",
+//        "date"=> "September 24, 2014");
 ?>
 
 <!DOCTYPE html>
@@ -107,10 +125,10 @@
                                 <?=$post["title"]?>
                             </h2>
                             <h3 class="post-subtitle">
-                                <?=$post["subtitle"]?>
+                                <?=$post["description"]?>
                             </h3>
                         </a>
-                        <p class="post-meta">Posted by <?=$post["author"]?><a href="#">Start Bootstrap</a> on <?=$post["date"]?></p>
+                        <p class="post-meta">Posted by <?=$post["name"]?><a href="#"> Start Bootstrap</a> on <?=$post["date"]?></p>
                     </div>
                     <hr>
                     <!-- Pager -->
