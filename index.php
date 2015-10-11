@@ -1,10 +1,11 @@
 <?php
-    $username = "root";
-    $password = "";
-    $hostname = "localhost";
-    $db_name = "blog";
+    require_once 'config.php';
+//    $username = "root";
+//    $password = "";
+//    $hostname = "localhost";
+//    $db_name = "blog";
 
-    $dbconnect = mysqli_connect($hostname, $username, $password, $db_name)       //SQL ühendus ja andmete leidmine
+    $dbconnect = mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE)       //SQL ühendus ja andmete leidmine
     or die("Unable to connect to MySQL");
     echo "Connected to MySQL";
 
@@ -17,14 +18,6 @@
             $posts[] = $row;
         }
     }
-//    $posts[]= array("title"=>"Man must explore, and this is exploration at its greatest",
-//        "subtitle"=>"Problems look mighty small from 150 miles up",
-//        "author"=>"Start Bootstrap",
-//        "date"=> "September 24, 2014");
-//    $posts[]= array("title"=>"Stars and stones",
-//        "subtitle"=>"Thats soo funny",
-//        "author"=>"Start Bootstrap",
-//        "date"=> "September 24, 2014");
 ?>
 
 <!DOCTYPE html>
