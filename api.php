@@ -8,7 +8,7 @@ if (file_exists($filename)) {
 } else {
     echo "The file $filename not found";
     $fp = fopen('data.csv',"w");
-    fwrite($fp,"Adam;Savage;NY\nJhonny;White;NY");
+    fwrite($fp,"Angus,Young,NY\nJhonny,White,NY");
     fclose($fp);
 }
 ?>
