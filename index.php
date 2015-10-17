@@ -1,12 +1,10 @@
 <?php
     require_once 'config.php';
 
-    $dbconnect=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE)
+    $dbconnect=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE) // connecting to server
     or die("Unable to connect to MySQL");
     echo "Connected to MySQL";
-
-    mysqli_query($dbconnect,"SET NAMES 'utf8'");
-    $query= mysqli_query($dbconnect,"SELECT * FROM posts JOIN authors");
+    $query= mysqli_query($dbconnect,"SELECT * FROM posts JOIN authors"); // MYSQL query task
     while($row=mysqli_fetch_assoc($query)) {
     $posts[] = $row;
 }
