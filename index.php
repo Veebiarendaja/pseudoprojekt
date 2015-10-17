@@ -7,7 +7,7 @@
 
     mysqli_query($dbconnect,"SET NAMES 'utf8'");
     $query= mysqli_query($dbconnect,"SELECT * FROM posts JOIN authors");
-while($row=mysqli_fetch_assoc($query)) {
+    while($row=mysqli_fetch_assoc($query)) {
     $posts[] = $row;
 }
 ?>
