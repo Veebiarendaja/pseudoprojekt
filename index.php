@@ -1,23 +1,15 @@
 <?php
     require_once 'config.php';
-//    $username = "root";
-//    $password = "";
-//    $hostname = "localhost";
-//    $db_name = "blog";
 
-    $dbconnect = mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE)       //SQL ühendus ja andmete leidmine
+    $dbconnect=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE)
     or die("Unable to connect to MySQL");
     echo "Connected to MySQL";
 
-
-
-    $sql_query= "SELECT * FROM POSTS JOIN AUTHORS";
-    $result=$dbconnect->query($sql_query);
-    if(mysqli_num_rows($result)>0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $posts[] = $row;
-        }
-    }
+    mysqli_query($dbconnect,"SET NAMES 'utf8'");
+    $query= mysqli_query($dbconnect,"SELECT * FROM posts JOIN authors");
+while($row=mysqli_fetch_assoc($query)) {
+    $posts[] = $row;
+}
 ?>
 
 <!DOCTYPE html>
