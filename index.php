@@ -13,7 +13,7 @@
 
     $sql_query= "SELECT * FROM POSTS JOIN AUTHORS";
     $result=$dbconnect->query($sql_query);
-    if(mysqli_result($result)>0) {
+    if(mysqli_num_rows($result)>0) {
         while ($row = mysqli_fetch_assoc($result)) {
             $posts[] = $row;
         }
