@@ -15,6 +15,12 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript" src="./js/jquery.tablesorter.js"></script>
 
+
+<input type="text" id="search_eesnimi" placeholder="Eesnimi">
+<input type="text" id="search_perenimi" placeholder="Perenimi">
+<input type="text" id="search_aadress" placeholder="Aadress">
+
+
 <table id="myTable">
     <thead>
     <tr>
@@ -36,6 +42,16 @@
                     $('tbody').append("<tr><td>" + j[0] + "</td><td>" + j[1] + "</td><td>" + j[2] + "</td></tr>");
                 }
                 $("#myTable").tablesorter();
+
+                var $rows = $('#myTable tr');
+                $('#search_eesnimi').keyup(function() {
+                    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+                    $rows.show().filter(function() {
+                        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                        return !~text.indexOf(val);
+                    }).hide();
+                });
             })
         }
     );
