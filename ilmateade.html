@@ -7,11 +7,27 @@
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 </head>
 <body>
-
+<input id="City" type="text" placeholder="Linn">
+<button onclick="JavaScript:getWeather()">Uuri Ilma</button>
+<p id="linn_info"></p>
+<p id="info"></p>
 
 <script>
-    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Estonia&appid=bd82977b86bf27fb59a04b61b657fb6f', function(data) {
-    });
+    function getWeather(){
+        var inputField =document.getElementById('City');
+        var inputVal=inputField.value;
+        if(!inputVal){
+            alert("Linna nimi puudub");
+            inputField.focus();
+            return false;
+        }
+        else{
+            $.get("http://api.openweathermap.org/data/2.5/weather?q="+inputVal+"&appid=935452dfa4f9ecca6b0d749ae7e84ca4", function (data) {
+                document.getElementById('info').innerHTML=data.weather[0].description;
+
+            });
+        }
+    }
 </script>
 
 
